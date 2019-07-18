@@ -5,13 +5,13 @@ package com.test.inversion.test;
  * Description TODO
  * @Author 陈恩惠
  * @Date 2019/7/17 14:27
+ * 依赖倒转
  **/
 public class Test1 {
 
     public static void main(String[] args) {
-        Position p = new Position();
-        System.out.println(p.receive(new Email()));
-        System.out.println(p.receive(new Wchat()));
+        Person p = new Person();
+        p.receive(new Wchat());
     }
 
 
@@ -21,6 +21,7 @@ class Wchat implements Inversion {
 
     @Override
     public String receive() {
+
         return "微信消息: Hello WX";
     }
 }
@@ -38,15 +39,9 @@ interface Inversion {
     String receive();
 }
 
-abstract class Person {
+class Person {
 
-    public abstract String receive(Inversion i);
-}
-
-class Position extends Person {
-
-    @Override
-    public String receive(Inversion i) {
-        return i.receive();
+    public void receive(Inversion i) {
+        System.out.println(i.receive());
     }
 }

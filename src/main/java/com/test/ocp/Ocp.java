@@ -5,6 +5,7 @@ package com.test.ocp;
  * Description TODO
  * @Author 陈恩惠
  * @Date 2019/7/17 16:57
+ * 开闭原则
  **/
 public class Ocp {
 
