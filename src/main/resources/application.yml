@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.10.181:3306/dongjingwms?useUnicode=true
+    username: djcrm
+    password: dongjingcrm
+#page∑÷“≥≈‰÷√
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
